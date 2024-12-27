@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucia & Alberto's Wedding</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
+        header { background: #f8e1e7; padding: 20px; }
+        header h1 { margin: 0; color: #6b5b95; }
+        section { padding: 20px; }
+        .photo-gallery img { max-width: 200px; margin: 10px; }
+        footer { background: #6b5b95; color: white; padding: 10px; }
+        .rsvp-form input, .rsvp-form textarea { width: 80%; padding: 10px; margin: 10px 0; }
+        .rsvp-form button { padding: 10px 20px; background: #6b5b95; color: white; border: none; cursor: pointer; }
+        .rsvp-form button:hover { background: #583d6e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lucia & Alberto's Wedding</h1>
+        <p>3rd May 2025 at Santuario Beata Maria Vergine delle Grazie</p>
+    </header>
+
+    <section id="story">
+        <h2>Our Story</h2>
+        <p>We met by chance, grew in love, and now we are embarking on a beautiful journey together. Join us as we celebrate our special day.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="photo-gallery">
+            <img src="photo1.jpg" alt="Lucia and Alberto">
+            <img src="photo2.jpg" alt="A memorable moment">
+            <img src="photo3.jpg" alt="Together forever">
+        </div>
+    </section>
+
+    <section id="registry">
+        <h2>Registry</h2>
+        <p>Your presence at our wedding is the greatest gift of all. If you'd like to contribute to our journey, here are some ways:</p>
+        <ul>
+            <li><a href="https://www.example.com">Gift Registry Link 1</a></li>
+            <li><a href="https://www.example.com">Gift Registry Link 2</a></li>
+        </ul>
+    </section>
+
+    <section id="rsvp">
+        <h2>RSVP</h2>
+        <form class="rsvp-form" action="https://formspree.io/f/your-email" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send RSVP</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Lucia & Alberto's Wedding</p>
+    </footer>
+</body>
+</html>
