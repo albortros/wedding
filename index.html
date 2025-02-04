@@ -1,62 +1,706 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucia & Alberto's Wedding</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
-        header { background: #f8e1e7; padding: 20px; }
-        header h1 { margin: 0; color: #6b5b95; }
-        section { padding: 20px; }
-        .photo-gallery img { max-width: 200px; margin: 10px; }
-        footer { background: #6b5b95; color: white; padding: 10px; }
-        .rsvp-form input, .rsvp-form textarea { width: 80%; padding: 10px; margin: 10px 0; }
-        .rsvp-form button { padding: 10px 20px; background: #6b5b95; color: white; border: none; cursor: pointer; }
-        .rsvp-form button:hover { background: #583d6e; }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Matrimonio Lucy e Albi</title>
+    <meta name="description" content="Vorremmo invitarti a questo giorno speciale.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Matrimonio Lucy e Albi">
+    <meta property="og:description" content="Vorremmo invitarti a questo giorno speciale.">
+    <meta property="og:image" content="https://github.com/Lorenxo-Padova/wedding-website/img/galleria-6.jpg">
+    <meta property="og:type" content="website">
+    <!--
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+
+            // add link tag to head section
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+
+        // load js files from CDN if local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body>
-    <header>
-        <h1>Lucia & Alberto's Wedding</h1>
-        <p>3rd May 2025 at Santuario Beata Maria Vergine delle Grazie</p>
-    </header>
-
-    <section id="story">
-        <h2>Our Story</h2>
-        <p>We met by chance, grew in love, and now we are embarking on a beautiful journey together. Join us as we celebrate our special day.</p>
+<body id="top">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<section class="hero">
+    <section class="navigation">
+        <header>
+            <div class="header-content">
+                <!-- <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div> -->
+                <div class="header-nav">
+                    <nav>
+                        <ul class="primary-nav">
+                            <li><a href="#intro">La nostra storia</a></li>
+                            <li><a href="#events">Programma</a></li>
+                            <li><a href="#gift">Regalo</a></li>
+                            <li><a href="#eng-pics">Qualche foto</a></li>
+                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Udine</a></li>
+                        </ul>
+                        <ul class="member-actions">
+                            <li><a href="#map" class="login">Luogo</a></li>
+                            <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="navicon">
+                    <a class="nav-toggle" href="#"><span></span></a>
+                </div>
+            </div>
+        </header>
     </section>
-
-    <section id="gallery">
-        <h2>Photo Gallery</h2>
-        <div class="photo-gallery">
-            <img src="photo1.jpg" alt="Lucia and Alberto">
-            <img src="photo2.jpg" alt="A memorable moment">
-            <img src="photo3.jpg" alt="Together forever">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="hero-content text-center">
+                    <!--<h1>Ram and Antara</h1>-->
+                    <!-- <img src="img/logo-lg.png"> -->
+                    <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
+                    <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
+                </div>
+            </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col-sm-4 hidden-xs"></div>
+            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
+                                                           class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
+            <div class="col-sm-4 hidden-xs"></div>
+        </div>
+    </div>
+    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+</section>
 
-    <section id="registry">
-        <h2>Registry</h2>
-        <p>Your presence at our wedding is the greatest gift of all. If you'd like to contribute to our journey, here are some ways:</p>
-        <ul>
-            <li><a href="https://www.example.com">Gift Registry Link 1</a></li>
-            <li><a href="https://www.example.com">Gift Registry Link 2</a></li>
-        </ul>
-    </section>
+<section id="invitation" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>CI SPOSIAMO!</h2>
+                <h3>La celebrazione avverrà il 3 maggio 2025 alle ore 11:30 e vorremmo tanto che tu ci fossi</h3>
+                <!-- <div class="share-bar"></div> -->
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section id="rsvp">
-        <h2>RSVP</h2>
-        <form class="rsvp-form" action="https://formspree.io/f/your-email" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send RSVP</button>
-        </form>
-    </section>
+<section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="header">Qualche tappa della nostra storia (fino ad adesso)</h2>
+                <h3 class="header">Ticket to ride! Non perdere il treno della vita! (anche perché non siete automuniti)</h3>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-1.jpeg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-1_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">UDINE</h3>
+                <h4 class="header">Udine Udine stazione di Udine</h4>
+                <h4 class="header">Perché cercare in giro per il mondo quello che hai già con te? </h4>
+                <h4 class="header"> What has Delft that Udine does not have? </h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-2.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-2_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">CATAN</h3>
+                <h4 class="header">Il treno per Catan parte dal binario 7</h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-3.jpeg" class="wp1"></div>
+                
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-3_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">CZESTOCHOWA</h3>
+                <h4 class="header">2019 Varsavia Czestochowa e ritorno?</h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-4.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-4_sm.png" class="wp1"></div>
+                <h4 class="header"> </h4>
+                <h4 class="header">Gli accompagnatori sono pregati di scendere</h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-5.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-5_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">PURGESSIMO</h3>
+                <h4 class="header">GIUGNO 2022 Disastro ferroviario a Purgessimo (Lucy e Albi si mettono ufficialmente assieme), due treni lanciati entrano in collisione.</h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-6.png" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-6_sm.png" class="wp1"></div>
+                <h4 class="header"> </h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-7.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-7_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">PADOVA</h3>
+                <h4 class="header">Promozione delle FFSS! I passeggeri del regionale 728 possono passare sul freccia rossa senza costi aggiuntivi.</h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-8.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-8_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">DELFT</h3>
+                <h4 class="header">Causa intensificarsi del traffico ed aumento delle tratte le FFSS consigliano l’utilizzo combinato delle linee aeree convenzionate di Ryanair</h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-9.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-9_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">PARIGI</h3>
+                <h4>2024 - Parigi centrale. Le FFSS comunicano che il treno ripartirà con circa 45 minuti di ritardo causa approfondimenti sul programma di viaggio per le tratte successive (prima del sì sono passati ben tre quarti d’ora...)</h4>
+                <h4></h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-10.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-10_sm.png" class="wp1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p></p>
+                <h3 class="header">UDINE – SANTUARIO DELLE GRAZIE</h3>
+                <h4 class="header">Il treno sta per arrivare alla stazione delle Grazie. Fate attenzione a non dimenticare niente sul treno...</h4>
+                <div class="col-md-12 hidden-sm hidden-xs"><img src="img/storia-11.jpg" class="wp1"></div>
+                <div class="col-md-12 hidden-lg  hidden-md"><img src="img/storia-11_sm.png" class="wp1"></div>
+                <h4 class="header"></h4>
+                <h4 class="header">Il rapido (?) Bordin express è annunciato con 120 minuti di ritardo causa incidente quantistico</h4>
+            </div>
+        </div>
+        <!--
+        <div class="row">
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.jpg" class="wp1"></div>
+            <div class="col-md-6">
+                <p>
+                    I first saw Antara in the Fall of 2008 when we started our undergrad. I was instantly attracted to
+                    her but was far too nervous to speak to her. I had told my friend I liked her and news had traveled
+                    fast and she soon found out. Her first reaction was "Who is Ram?" and she began searching for me in
+                    the class. She started to take notice of me and no matter how boring the lecture was, we never
+                    missed a class after that. After a good few months I finally plucked up the courage to ask her out
+                    and the rest is history :)
+                </p>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.jpg" class="wp2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/IMG_2317.jpg" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/DSD_0214.jpg" class="wp9"></div>
+        </div>
+        -->
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Lucia & Alberto's Wedding</p>
-    </footer>
+<section class="events section-padding" id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Programma della giornata</h3>
+                <p><strong>3 maggio 2025</strong></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                <div class="wp3">
+                    <h5>MESSA <span class="time">ore 11:30</span></h5>
+                    <p>La celebrazione avverrà presso il Santuario della Beata Vergine delle Grazie.</p>
+                    <a href="https://maps.app.goo.gl/izhTVetsN4eQDooY6"><strong>Udine, Piazza I maggio, 24</strong></a>
+                    <p></p>
+                    <div><img src="img/santuario_md.png" class="wp1"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
+                <div class="wp5">
+                    <h5>PRANZO<span class="time"> a seguire</span></h5>
+                    <p>Abbiamo scelto di portare i nostri invitati al ristorante Belvedere di Tricesimo.</p>
+                    <a href="https://maps.app.goo.gl/xVVzDpkE3Pap3iR1A"><strong>Tricesimo (UD), via Belvedere 21.</strong></a>
+                    <p></p>
+                    <div><img src="img/belvedere_md.png" class="wp1"></div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="row section-padding">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
+                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 section-border section-padding">
+            </div>
+        </div>-->
+    </div>
+
+    <!--
+    <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Ugh... dress codes?</h3>
+                    <h5>Mehndi <span class="time">1PM - 5PM</span></h5>
+                    <p>
+                        <strong>Ethnic indian wear</strong>
+                        <br>
+                        Ladies can wear something
+                        <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-women/">bright & vivid</a>
+                        and gentlemen can be on
+                        their <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-men/">vibrant
+                        kurtas</a> with pants or pyjamas along with an optional shawl.
+                    </p>
+                    <h5>Cocktail Night <span class="time">7PM - 12AM</span></h5>
+                    <p>
+                        <strong>Western attire</strong>
+                        <br>
+                        A semi-formal look that is contemporary & fashionable which is not too prim & proper is the best
+                        to pull off this night. You can see some pins for
+                        <a href="https://www.pinterest.com/ramswarooppatra/cocktail-night-outfit-for-women/">ladies</a>
+                        & <a href="https://www.pinterest.com/ramswarooppatra/cocktail-night-outfit-for-men/">gents</a>.
+                    </p>
+                    <h5>Wedding <span class="time">6PM-12AM</span></h5>
+                    <p>
+                        <strong>Indo-western</strong>
+                        <br>
+                        Ladies can flaunt their unconventional sarees,
+                        <a href="https://www.pinterest.com/ramswarooppatra/indo-western-lehengas/">lehengas</a>,
+                        <a href="https://www.pinterest.com/ramswarooppatra/indo-western-anarkalis/">anarkalis</a>,
+                        dresses and the list
+                        goes on whereas gentlemen can wear any kind of suit or just blazer. If you don't like to wear a
+                        suit/blazer, you can do a <a
+                            href="https://www.pinterest.com/ramswarooppatra/high-neck-jackets-for-men/">high-neck
+                        (band gala) waistcoat & shirt</a> combo.
+                    </p>
+                </div>
+            </div> /.modal-content
+        </div< /.modal-dialog
+    </div> /.modal 
+    -->
+
+</section>
+
+<section id="gift" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Lista nozze</h3>
+                <p>Ci sono tre modalità con cui potete darci una mano!</p>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <h4>IBAN</h4>
+                        <p>Se volete contribuire al nostro viaggio di nozze, potete farlo con un bonifico a questo IBAN:</p>
+                        <p><strong>IT452347523947562934756</strong></p>
+                        <p>Inserendo come causale:</p>
+                        <p><strong>Regalo matrimonio Alberto e Lucia</strong></p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h4>AMAZON</h4>
+                        <p>Abbiamo creato una lista di oggetti che ci saranno utili e che potete spedirci comodamente al nostro indirizzo di casa.</p>
+                        <p>INDIRIZZO DI CASA: via -----</p>
+                        <p>LISTA SU AMAZON: accessibile a <a href="#" target="_blank">questo</a> link.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h4>LISTA NOZZE CLASSICA</h4>
+                        <p>In attesa di invitarvi a cena, potete contribuire alla nostra cucina regalandoci qualcosa dalla nostra lista al negozio <strong>"Noi passioni domestiche"</strong> a Udine (<a href="https://maps.app.goo.gl/75wY22EYbgBrhCFM6">Via Tricesimo, 33, 33100 Udine UD</a>), recandovi lì o chiamandoli al <strong>0432 631418</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="row section-border wp7">
+            <div class="col-md-4 col-md-offset-4">
+                <img src="img/iphone_instagram.jpg">
+            </div>
+        </div>
+        -->
+    </div>
+</section>
+
+<section id="eng-pics" class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Foto di noi</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-1.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-1_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-2.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-2_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-3.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-3_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-4.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-4_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-5.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-5_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/copertina.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/copertina_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-7.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-7_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-8.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-8_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-9.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-9_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-10.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-10_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-11.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-11_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-12.jpeg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-12_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/galleria-13.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/galleria-13_with_bgc.png" alt=""/>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row hidden-lg hidden-md hidden-xs">
+            <div class="col-xs-12 section-border section-padding"></div>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="diamond floating-logo">
+                <img src="img/sketch-logo.png" alt="Sketch Logo">
+                <div class="ring"></div>
+            </div>
+        </div>
+    </div>-->
+</section>
+
+<section id="video-bg" class="hidden-sm hidden-xs">
+    <div id="bgndVideo" class="player"
+         data-property="{videoURL:'https://www.youtube.com/watch?v=Nh0CRFf5--I',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:0, stopAt:259, opacity:1}">
+    </div>
+    <div id="video-content">
+        <h5>Udine</h5>
+        <p>Città migliore del mondo</p>
+    </div>
+</section>
+
+<!--
+<section id="map" class="section-padding">
+    <div class="text-center">
+        <h3>How do I get there?</h3>
+        <p>It's way easier than you think!</p>
+    </div>
+    <div id="map-canvas"></div>
+    <div id="map-content-wrapper" class="container pointer-events-none">
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                <div class="text-center">
+                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
+                    </div>
+                </div>
+                <div id="map-content" class="pointer-events-auto">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>ITC Fortune Park</h5>
+                            <p>Kona Expressway, Howrah, West Bengal 711403, India</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Mr. Amit Roy</h5>
+                            <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+91 9412345678</a><br>
+                                <i class="fa fa-mobile"></i> <a href="tel://+917123456789">+91 7123456789</a></p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-6" style="padding: 5px;">
+                            <a class="btn btn-fill btn-small"
+                               href="https://m.uber.com/ul/?action=setPickup&client_id=Yh7Dl6SjB56RY2JuuZF8ttVa6ryFV78W&pickup=my_location&dropoff[formatted_address]=Fortune%20Park%20Panchwati%20-%20Hotels%20in%20Kolkata%2C%20Howrah%2C%20West%20Bengal%2C%20India&dropoff[latitude]=22.593276&dropoff[longitude]=88.270277"><i
+                                    class="fa fa-taxi"></i>&nbsp;&nbsp;Book Uber</a>
+                        </div>
+                        <div class="col-md-6" style="padding: 5px;">
+                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
+                                map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<section class="rsvp text-center" id="rsvp">
+
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Grazie!</h3>
+                        <p>Siamo contenti che festeggierai con noi!</p>
+                        <div id="add-to-cal"></div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>QUINDI ALLA FINE CI SARAI?</h3>
+                <p>Fateci sapere attraverso questo form se ci sarete o meno al matrimonio! Per favore ditecelo entro il giorno/mese/anno</p>
+                <form id="rsvp-form" class="rsvp-form"
+                      action=""
+                      method="POST">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="name" class=""
+                                                                 placeholder="Nome"
+                                                                 required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="surname" class=""
+                                                                 placeholder="Cognome"
+                                                                 required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
+                                                                  max="10"
+                                                                  placeholder="Familiari oltre a te"
+                                                                  required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
+                                                                     placeholder="La tua mail"
+                                                                     required>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                                                class="" min="0"
+                                                                placeholder="Invite code"
+                                                                required>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="alert-wrapper"></div>
+                    </div>
+                    <button class="btn-fill rsvp-btn">
+                        Ci sarò!
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center content">
+                <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                <p>Crafted by Ram with lots of <span class="fa fa-heart pulse2"></span> for Antara</p>
+            </div>
+        </div>
+    </div>
+    -->
+</footer>
+<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<script src="js/vendor/ouical.js"></script>
+<script src="js/scripts.min.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-46465113-4', 'auto');
+    ga('send', 'pageview');
+</script>
 </body>
 </html>
